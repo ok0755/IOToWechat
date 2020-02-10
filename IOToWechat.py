@@ -3,7 +3,8 @@
 import requests                         
 import json     
 import time               
-import itchat                            #  微信API文档: https://itchat.readthedocs.io/zh/latest/
+import itchat            
+ #  微信API文档: https://itchat.readthedocs.io/zh/latest/
 from time import sleep
 import schedule
 ## 程序功能：定时抓取IOT机台运行数据，按自定义规则(本例 totalDownTime > 30)收集指定字段信息,发送至微信指定好友(本例传至"文件传输助手"，即:自己传给自己)
@@ -33,7 +34,8 @@ class IOT_info():
     def send_to_Wechat(self):
         info = self.get_produce_information()
         if len(info) > 80:
-            itchat.send(info,toUserName='filehelper')  # 发送text至微信文件传输助手,也可以定义为任意微信好友       
+            itchat.send(info,toUserName='filehelper')  
+            # 发送text至微信文件传输助手,也可以定义为任意微信好友       
 
 if __name__=='__main__':
     IOT = IOT_info()
